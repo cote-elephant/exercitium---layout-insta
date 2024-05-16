@@ -29,10 +29,22 @@
   justify-content: center;
   align-items: center;
 }
-.spider {
+.border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border: 3px transparent solid;
+  background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)) padding-box,
+    linear-gradient(to right top, #f9ce34, #ee2a7b, #6118d7) border-box;
+}
+.spider {
+  box-sizing: content-box;
   width: 130px;
   height: 130px;
+  border-radius: 50%;
 }
 
 .infos {
