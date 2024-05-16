@@ -1,0 +1,209 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Actor", sans-serif;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+.biggrid {
+  display: grid;
+  grid-template-rows: 405px 10fr;
+}
+.onlyforgrid {
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: 100px 200px 1fr 200px 100px;
+  grid-template-rows: 10px 200px 160px 35px;
+  /* grid-template-areas:
+    "blank pic infos blank blank"
+    "blank story blank"
+    "blank blank nav blank blank"
+    "blank main blank"; */
+}
+.profilpic {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spider {
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+}
+
+.infos {
+  grid-column: 3/5;
+  grid-row: 2;
+}
+
+.whodis {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.whodis > h4::after {
+  content: "\f00c";
+  padding-left: 15px;
+  font-family: FontAwesome;
+  color: rgb(82, 189, 255);
+}
+.numbers {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 25px;
+}
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+a {
+  background: none;
+}
+.namelink {
+  width: 100px;
+  background-color: rgb(67, 69, 71);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.namelink > a::before {
+  content: "\40";
+  font-family: FontAwesome;
+  font-size: 0.8rem;
+  padding-right: 2px;
+}
+.froggylink > a::before {
+  content: "\f0c1";
+  font-family: FontAwesome;
+  font-size: 0.8rem;
+  padding-right: 5px;
+}
+.worklink {
+  display: flex;
+  gap: 15px;
+}
+/* BUTTON */
+div > button {
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  padding: 5px 15px 5px 15px;
+  border-radius: 7px;
+}
+.follow {
+  background-color: rgb(47, 165, 238);
+}
+.message {
+  background-color: rgb(67, 69, 71);
+}
+.storyline {
+  grid-column: 2/5;
+  grid-row: 3;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.stories {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 15px;
+}
+.story1,
+.story2 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.story1 {
+  background-image: url(https://2wjyoqczplq2loncx0jfrnk1q5w-thumbnail.storage.muc1.de.bnerd.com/thumbnail/de/Veranstaltungen/2023/Ricky%20Gervais/5809/image-thumb__5809__thumbnail-event-detail-hero/Ricky_Gervais_-_new_press_shot_2022.caaa76c2.png);
+}
+
+.story2 {
+  background-image: url(https://2wjyoqczplq2loncx0jfrnk1q5w-thumbnail.storage.muc1.de.bnerd.com/thumbnail/de/Veranstaltungen/2023/Ricky%20Gervais/5809/image-thumb__5809__thumbnail-event-detail-hero/Ricky_Gervais_-_new_press_shot_2022.caaa76c2.png);
+}
+nav {
+  grid-row: 4;
+  grid-column: 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.allthree {
+  height: 100%;
+  font-size: 1rem;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 5px;
+}
+.allthree::before {
+  font-family: FontAwesome;
+  font-size: 0.8rem;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+.allthree:active,
+.allthree:hover {
+  border-top: white 2px solid;
+}
+
+.posts::before {
+  content: "\f277";
+}
+
+.reels::before {
+  content: "\23";
+}
+.tagged::before {
+  content: "\f02b";
+}
+
+main {
+  grid-row: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  padding: 0px 50px 0px 50px;
+}
+main > div {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+main > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.fa-copy {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2rem;
+  color: white;
+  rotate: 270deg;
+  background: none;
+}
