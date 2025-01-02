@@ -1,3 +1,4 @@
+/* ----- ROOT ----- */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,11 +8,18 @@
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
-.biggrid {
+/* ----- a ROOT ----- */
+a {
+  background: none;
+  text-decoration: none;
+}
+/* ----- MAIN GRID STRUCTURE ----- */
+.main-grid {
   display: grid;
   grid-template-rows: 405px 10fr;
 }
-.onlyforgrid {
+/* ----- INFO BOX PART STRUCTURE ----- */
+.info-box {
   grid-row: 1;
   display: grid;
   grid-template-columns: 100px 200px 1fr 200px 100px;
@@ -22,14 +30,17 @@
     "blank blank nav blank blank"
     "blank main blank"; */
 }
-.profilpic {
+
+/* ----- PROFIL PIC PART ----- */
+.profil-box {
   grid-column: 2;
   grid-row: 2;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.border {
+
+.profil-box > div {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,19 +51,21 @@
   background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)) padding-box,
     linear-gradient(to right top, #f9ce34, #ee2a7b, #6118d7) border-box;
 }
-.spider {
+
+.profil-pic {
   box-sizing: content-box;
   width: 130px;
   height: 130px;
   border-radius: 50%;
 }
 
-.infos {
+/* ----- GENERAL INFO BOX STRUCTURE ----- */
+.general-info-box {
   grid-column: 3/5;
   grid-row: 2;
 }
 
-.whodis {
+.general-infos {
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -61,13 +74,22 @@
   margin-bottom: 15px;
 }
 
-.whodis > h4::after {
+.general-infos > h4::after {
   content: "\f00c";
   padding-left: 15px;
   font-family: FontAwesome;
   color: rgb(82, 189, 255);
 }
-.numbers {
+
+.general-infos > div > button:first-child {
+  background-color: rgb(47, 165, 238);
+}
+
+.general-infos > div > button:nth-child(2) {
+  background-color: rgb(67, 69, 71);
+}
+
+.number-infos {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -75,15 +97,14 @@
   margin-bottom: 15px;
   gap: 25px;
 }
-.bio {
+
+.bio-infos {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
-a {
-  background: none;
-}
-.namelink {
+
+.name-link {
   width: 100px;
   background-color: rgb(67, 69, 71);
   display: flex;
@@ -93,23 +114,27 @@ a {
   padding-left: 3px;
   padding-right: 3px;
 }
-.namelink > a::before {
+
+.name-link > a::before {
   content: "\40";
   font-family: FontAwesome;
   font-size: 0.8rem;
   padding-right: 2px;
 }
-.froggylink > a::before {
+
+.example-link > a::before {
   content: "\f0c1";
   font-family: FontAwesome;
   font-size: 0.8rem;
   padding-right: 5px;
 }
-.worklink {
+
+.skills-link {
   display: flex;
   gap: 15px;
 }
-/* BUTTON */
+
+/* ----- BUTTON general ----- */
 div > button {
   border: none;
   outline: none;
@@ -117,13 +142,8 @@ div > button {
   padding: 5px 15px 5px 15px;
   border-radius: 7px;
 }
-.follow {
-  background-color: rgb(47, 165, 238);
-}
-.message {
-  background-color: rgb(67, 69, 71);
-}
-.storyline {
+/* ----- STORY LINE ----- */
+.story-line-box {
   grid-column: 2/5;
   grid-row: 3;
   display: flex;
@@ -131,15 +151,16 @@ div > button {
   align-items: center;
   gap: 10px;
 }
-.stories {
+
+.story-line {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
   margin-right: 15px;
 }
-.story1,
-.story2 {
+
+.story {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -147,13 +168,17 @@ div > button {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.story1 {
+
+/* going very little crazy here*/
+.story-line-box > div:first-child > div:first-child {
   background-image: url(https://2wjyoqczplq2loncx0jfrnk1q5w-thumbnail.storage.muc1.de.bnerd.com/thumbnail/de/Veranstaltungen/2023/Ricky%20Gervais/5809/image-thumb__5809__thumbnail-event-detail-hero/Ricky_Gervais_-_new_press_shot_2022.caaa76c2.png);
 }
 
-.story2 {
+.story-line-box > div:nth-child(2) > div:first-child {
   background-image: url(https://2wjyoqczplq2loncx0jfrnk1q5w-thumbnail.storage.muc1.de.bnerd.com/thumbnail/de/Veranstaltungen/2023/Ricky%20Gervais/5809/image-thumb__5809__thumbnail-event-detail-hero/Ricky_Gervais_-_new_press_shot_2022.caaa76c2.png);
 }
+
+/* ----- NAV PART ----- */
 nav {
   grid-row: 4;
   grid-column: 3;
@@ -162,24 +187,28 @@ nav {
   justify-content: space-between;
   align-items: flex-end;
 }
-.allthree {
+
+.nav {
   height: 100%;
   font-size: 1rem;
   display: flex;
   align-items: flex-end;
   padding-bottom: 5px;
+ 
+  &:hover {
+  border-top: white 2px solid;
+  cursor: pointer;
 }
-.allthree::before {
+}
+
+.nav::before {
   font-family: FontAwesome;
   font-size: 0.8rem;
   padding-right: 5px;
   padding-bottom: 5px;
 }
-.allthree:active,
-.allthree:hover {
-  border-top: white 2px solid;
-}
 
+/* ----- ICONS FOR NAV ----- */
 .posts::before {
   content: "\f277";
 }
@@ -187,10 +216,12 @@ nav {
 .reels::before {
   content: "\23";
 }
+
 .tagged::before {
   content: "\f02b";
 }
 
+/* ----- MAIN PART FOR PICTURES STRUCTURE ----- */
 main {
   grid-row: 2;
   display: flex;
@@ -199,17 +230,21 @@ main {
   gap: 5px;
   padding: 0px 50px 0px 50px;
 }
+
 main > div {
   width: 300px;
   height: 300px;
   position: relative;
-}
-main > div > img {
+  
+  img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
+}
+
+/* ----- SAVE/COPY ICON ----- */
 .fa-copy {
   position: absolute;
   top: 10px;
